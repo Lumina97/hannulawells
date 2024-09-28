@@ -91,7 +91,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
       }
       onClick={() => {
         console.log(`#${section}`);
-        if (!isMobile) onClick(section, index, `#${section}`);
+        if (!isMobile) onClick(section, index);
         else {
           setShowMobileMoreInfo(true);
         }
@@ -103,6 +103,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
       transition={{ duration: 0 }}
       layout
     >
+      {/*mobile blurred background*/}
       {showMobileMoreInfo && (
         <div className="absolute text-white backdrop-blur rounded-2xl">
           <a
@@ -131,7 +132,6 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
         }}
       >
         <motion.img
-          layout="position"
           src={service.img}
           alt={service.title}
           style={{ height: "3rem", width: "3rem" }}
@@ -146,15 +146,12 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
             color: "white",
             width: isMobile ? "9rem" : "12rem",
           }}
-          layout="position"
         >
           {service.title}
         </motion.h2>
       </div>
       {expanded && !isMobile && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 0 } }}
           style={{
             display: "flex",
             alignItems: "center",

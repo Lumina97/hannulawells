@@ -7,6 +7,7 @@ import {
   securityConsultingData,
   technologySolutionsData,
 } from "../../lib/data";
+import { debug } from "console";
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -97,7 +98,7 @@ const ServicesSection = () => {
               section="services-testing"
               service={service}
               expanded={
-                expandedItem?.section === "testing" &&
+                expandedItem?.section === "services-testing" &&
                 expandedItem?.index === index
               }
               onClick={handleExpand}
@@ -119,7 +120,7 @@ const ServicesSection = () => {
               section="security-consulting"
               service={service}
               expanded={
-                expandedItem?.section === "security" &&
+                expandedItem?.section === "security-consulting" &&
                 expandedItem?.index === index
               }
               onClick={handleExpand}
@@ -141,7 +142,7 @@ const ServicesSection = () => {
               section="technology-solutions"
               service={service}
               expanded={
-                expandedItem?.section === "technology" &&
+                expandedItem?.section === "technology-solutions" &&
                 expandedItem?.index === index
               }
               onClick={handleExpand}
