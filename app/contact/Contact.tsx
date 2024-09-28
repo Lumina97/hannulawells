@@ -8,7 +8,7 @@ import Image from "next/image";
 type Props = {};
 
 const Contact = (_props: Props) => {
-  const [isSubmitted, setIsSubmitted] = useState(true);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
