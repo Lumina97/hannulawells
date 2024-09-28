@@ -6,15 +6,15 @@ import HackersNeverStop from "./home/HackersNeverStop";
 import Footer from "./home/FooterSection";
 
 export default function Home() {
-    return (
-        <div className="flex flex-col">
-            <Hero />
-            <Footer/>
-            <div className="bg-custom-radial">
-                <PeopleMatter />
-                <HackersNeverStop />
-            </div>
-            <Services />
-        </div>
-    );
+  return (
+    <div className="flex flex-col !scroll-smooth">
+      <Hero />
+      <Footer />
+      <div className="bg-custom-to-bottom-left">
+        <PeopleMatter />
+        <HackersNeverStop />
+      </div>
+      <Services />
+    </div>
+  );
 }
