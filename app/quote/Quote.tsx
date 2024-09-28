@@ -12,7 +12,7 @@ const Quote: React.FC<Props> = ({ close }) => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [selectedTests, setSelectedTests] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(true);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const [numEmployees, setNumEmployees] = useState<number | "">(0);
   const [numLocations, setNumLocations] = useState<number | "">(0);

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FloatingNavbar from "./FloatingNavBar";
 import Quote from "../quote/Quote";
+import { usePathname } from "next/navigation";
 
 type Props = {};
 
@@ -13,7 +14,8 @@ const HeaderNavbar = (props: Props) => {
 
   const handleGetQuoteClick = () => setShowQuote(true);
   const handleQuoteClose = () => setShowQuote(false);
-
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <div>
       {/* Desktop Navbar */}
@@ -49,7 +51,13 @@ const HeaderNavbar = (props: Props) => {
           {["services", "content", "about", "contact"].map((item) => (
             <div key={item} className="w-1/6 relative group text-center">
               <Link href={`/${item}`} className="relative inline-block">
-                <span className="transition-transform duration-300 transform group-hover:scale-110 block font-normal hover:font-bold">
+                <span
+                  className={`transition-transform duration-300 transform group-hover:scale-110 block hover:font-bold ${
+                    pathname === `/${item}`
+                      ? "font-bold scale-110"
+                      : "font-normal scale-100"
+                  }`}
+                >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </span>
               </Link>
