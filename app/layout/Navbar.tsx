@@ -11,21 +11,17 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [lastScroll, setLastScroll] = useState(0);
   const [showQuote, setShowQuote] = useState(false);
 
   const handleGetQuoteClick = () => setShowQuote(true);
   const handleQuoteClose = () => setShowQuote(false);
 
-  const backgroundFadeStart = 150;
-  const opacity =
-    lastScroll > backgroundFadeStart ? Math.min(scrollPosition / 1000, 0.7) : 0;
+  const opacity = Math.min(scrollPosition / 1500, 0.7);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
       setScrollPosition(window.scrollY);
     }
-    setLastScroll(window.scrollY);
   };
 
   useEffect(() => {
