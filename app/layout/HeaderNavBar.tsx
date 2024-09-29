@@ -15,7 +15,6 @@ const HeaderNavbar = (props: Props) => {
   const handleGetQuoteClick = () => setShowQuote(true);
   const handleQuoteClose = () => setShowQuote(false);
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div>
       {/* Desktop Navbar */}
@@ -47,7 +46,7 @@ const HeaderNavbar = (props: Props) => {
             height={65}
           />
         </Link>
-        <div className="flex w-7/12 justify-between items-center text-xl">
+        <div className="flex w-55 justify-between items-center text-xl">
           {["services", "content", "about", "contact"].map((item) => (
             <div key={item} className="w-1/6 relative group text-center">
               <Link href={`/${item}`} className="relative inline-block">

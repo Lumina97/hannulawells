@@ -45,8 +45,20 @@ body {
 }
 
 .shadow-custom4 {
-  text-shadow: 2px 2px 8px rgb(0 0 0 / var(--tw-text-opacity));
+  text-shadow: 0px 0px 10px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 10px rgb(0 0 0 / var(--tw-text-opacity));
 }
+
+.shadow-custom5 {
+  text-shadow: 0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;

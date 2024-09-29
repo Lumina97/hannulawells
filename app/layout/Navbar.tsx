@@ -4,73 +4,47 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Quote from "../quote/Quote";
+import { usePathname } from "next/navigation";
+import FloatingNavbar from "./FloatingNavBar";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const [showNavbar, setShowNavbar] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [lastScroll, setLastScroll] = useState(0);
   const [showQuote, setShowQuote] = useState(false);
 
   const handleGetQuoteClick = () => setShowQuote(true);
   const handleQuoteClose = () => setShowQuote(false);
 
+  const backgroundFadeStart = 150;
+  const opacity =
+    lastScroll > backgroundFadeStart ? Math.min(scrollPosition / 1000, 0.7) : 0;
+
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY === 0) {
-        setShowNavbar(false);
-      } else if (window.scrollY > lastScrollY) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-      setLastScrollY(window.scrollY);
+      setScrollPosition(window.scrollY);
     }
-  };
-
-  const handleMouseEnter = () => {
-    if (window.scrollY !== 0) {
-      setShowNavbar(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (window.scrollY !== 0) {
-      setShowNavbar(false);
-    }
-  };
-
-  const handleMouseMove = (event: MouseEvent) => {
-    if (event.clientY < 50 && window.scrollY !== 0) {
-      setShowNavbar(true);
-    }
+    setLastScroll(window.scrollY);
   };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
-      window.addEventListener("mousemove", handleMouseMove);
       return () => {
         window.removeEventListener("scroll", controlNavbar);
-        window.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [lastScrollY]);
-
+  }, []);
+  const pathname = usePathname();
   return (
     <div>
       {/* Desktop Navbar */}
       <motion.nav
-        className={`hidden font-raleway lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4 transition-all duration-500 ${
-          showNavbar ? "translate-y-0" : "-translate-y-full"
-        } ${
-          showNavbar
-            ? "bg-black bg-opacity-60 backdrop-blur-[3px]"
-            : "bg-transparent"
-        }`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        className={` hidden font-raleway lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4  bg-opacity-60 backdrop-blur-[3px]`}
+        style={{
+          backgroundColor: `rgba(0,0,0,${opacity})`,
+        }}
       >
         <Link
           href={"/"}
@@ -99,11 +73,17 @@ const Navbar = (props: Props) => {
             height={65}
           />
         </Link>
-        <div className="flex w-7/12 justify-between items-center text-xl">
+        <div className="flex w-55 justify-between items-center text-xl">
           {["services", "content", "about", "contact"].map((item) => (
-            <div key={item} className="w-1/6 relative group text-center">
+            <div key={item} className="w-13p relative group text-center">
               <Link href={`/${item}`} className="relative inline-block">
-                <span className="transition-transform duration-300 transform group-hover:scale-110 font-normal hover:font-bold block">
+                <span
+                  className={`transition-transform duration-300 transform group-hover:scale-110 block hover:font-bold ${
+                    pathname === `/${item}`
+                      ? "font-bold scale-110"
+                      : "font-normal scale-100"
+                  }`}
+                >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </span>
               </Link>
@@ -134,6 +114,11 @@ const Navbar = (props: Props) => {
           </motion.div>
         </div>
       </motion.nav>
+
+      {/* Mobile and Tablet Navbar */}
+      <div className="lg:hidden">
+        <FloatingNavbar />
+      </div>
 
       {/* Get a Quote Component */}
       <AnimatePresence>

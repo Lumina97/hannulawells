@@ -45,6 +45,13 @@ const config: Config = {
         normal: "0 2px 4px var(--tw-shadow-color)",
         lg: "0 8px 16px var(--tw-shadow-color)",
       },
+      lineHeight: {
+        "12": "3rem",
+      },
+      width: {
+        "55": "55%",
+        "13p": "13.333%",
+      },
     },
   },
   plugins: [

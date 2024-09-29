@@ -86,9 +86,19 @@ const ServicesSection = () => {
       </div>
       <div className={`mx-[5%] ${isVisible ? "fade-in" : ""}`}>
         <div className="flex flex-row gap-4 mx-24 items-center justify-center">
-          <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+          <hr
+            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            style={{
+              boxShadow: "1px 7px 13px 0px #394454",
+            }}
+          />
           <span className="text-white text-3xl text-center">Testing</span>
-          <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+          <hr
+            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            style={{
+              boxShadow: "1px 7px 13px 0px #394454",
+            }}
+          />
         </div>
         <ul className="relative justify-items-center grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[8%] my-12">
           {testingData.map((service, index) => (
@@ -106,11 +116,21 @@ const ServicesSection = () => {
           ))}
         </ul>
         <div className="flex flex-row gap-4 mx-24 items-center justify-center">
-          <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+          <hr
+            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            style={{
+              boxShadow: "1px 7px 13px 0px #394454",
+            }}
+          />
           <span className="text-white text-3xl text-center">
             Security Counseling
           </span>
-          <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+          <hr
+            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            style={{
+              boxShadow: "1px 7px 13px 0px #394454",
+            }}
+          />{" "}
         </div>
         <ul className="relative justify-items-center grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[8%] my-12">
           {securityConsultingData.map((service, index) => (
@@ -128,11 +148,21 @@ const ServicesSection = () => {
           ))}
         </ul>
         <div className="flex flex-row gap-4 mx-24 items-center justify-center">
-          <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+          <hr
+            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            style={{
+              boxShadow: "1px 7px 13px 0px #394454",
+            }}
+          />{" "}
           <span className="text-white text-3xl text-center">
             Technology Solutions
           </span>
-          <hr className="hidden sm:block flex-1 my-12 h-px bg-[rgba(22,22,41,1)] border-t-0" />
+          <hr
+            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            style={{
+              boxShadow: "1px 7px 13px 0px #394454",
+            }}
+          />{" "}
         </div>
         <ul className="relative justify-items-center grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[8%] my-12">
           {technologySolutionsData.map((service, index) => (

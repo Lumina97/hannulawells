@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { GoArrowRight } from "react-icons/go";
 
 type CardProps = {
   image: string;
@@ -11,14 +12,15 @@ type CardProps = {
 
 const Card = ({ image, title, description, author, link }: CardProps) => {
   return (
-    <div className="card w-full sm:w-96 h-[28rem] rounded-3xl p-6 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+    <div className="card w-full sm:w-96 h-[28rem] rounded-3xl p-2 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
       {/* Background Overlay */}
       <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       {/* Image */}
       <Image
-        width={75}
-        height={75}
+        width={1000}
+        height={1000}
+        quality={100}
         src={image}
         alt={title}
         className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl filter grayscale group-hover:filter-none transition-all duration-500"
@@ -28,21 +30,21 @@ const Card = ({ image, title, description, author, link }: CardProps) => {
       <div className="relative z-10 text-white flex flex-col justify-between h-full">
         <div className="flex flex-col">
           {/* Title */}
-          <h1 className=" pr-20 shadow-custom text-1xl sm:text-3xl font-semibold m-0 transition-all duration-500 line-clamp-3 whitespace-pre-line transform group-hover:scale-105">
+          <h1 className=" pl-4 pt-4 origin-left pr-20 shadow-custom4 text-1xl sm:text-3xl font-semibold m-0 transition-all duration-500 line-clamp-3 whitespace-pre-line transform group-hover:scale-105">
             {title}
           </h1>
 
           {/* Info - Initially Hidden, Appears on Hover */}
           <div className="info flex flex-col justify-center items-center opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-            <p className="tracking-wide text-base mt-4 text-center">
+            <p className=" pl-4 pt-4 text-left shadow-custom5 tracking-wide text-base mt-4">
               {description}
             </p>
             <a
               href={link}
               target="_blank"
-              className="mt-6 py-2 px-4 outline-none border-none rounded bg-white text-black font-bold cursor-pointer transition-colors duration-400 hover:bg-blue-500 hover:text-white"
+              className=" flex flex-rows gap-2 items-center self-end mt-6 py-2 px-4 outline-none border-none rounded  shadow-custom4 text-white font-bold cursor-pointer hover:text-[#9DC4FF]"
             >
-              Read More
+              Read More &rarr;
             </a>
           </div>
         </div>

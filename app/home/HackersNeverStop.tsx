@@ -59,9 +59,10 @@ const HackersNeverStop = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
       </div>
       <Image
-        src="/hackerstats.svg"
-        width={75}
-        height={75}
+        src="/grp.png"
+        width={5000}
+        height={5000}
+        quality={100}
         alt="hacker statistics by hannulawells"
         className={`absolute right-[0%] lg:right-[4.5%] top-[15%] md:top-[15%] sm:top-[15%] lg:top-[3%] w-[25%] ${
           isVisible ? "fade-from-right" : ""

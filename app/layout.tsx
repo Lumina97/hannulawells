@@ -20,7 +20,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className="bg-black">
         <ScrollToTop />
-        <HeaderNavbar />
         <Navbar />
         <main className="flex-1">{children}</main>
         <hr className="flex-1 mt-12 h-px bg-[#2D2D2D] border-t-0" />

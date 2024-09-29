@@ -90,7 +90,6 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
             }
       }
       onClick={() => {
-        console.log(`#${section}`);
         if (!isMobile) onClick(section, index);
         else {
           setShowMobileMoreInfo(true);
@@ -105,7 +104,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
     >
       {/*mobile blurred background*/}
       {showMobileMoreInfo && (
-        <div className="absolute text-white backdrop-blur rounded-2xl">
+        <div className="absolute text-white backdrop-blur rounded-2xl ">
           <a
             onClick={() => {
               onClick(section, index, `#${section}`);
@@ -119,7 +118,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
               src={"RightArrow.svg"}
               className="w-[8%]"
               alt={"RightArrow"}
-            />{" "}
+            />
           </a>
         </div>
       )}
@@ -172,13 +171,15 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
             }}
           />
           <div className="flex ">
-            <p className="line-clamp-3 text-[1.25rem] leading-9">
+            <p className="line-clamp-3 text-[1.25rem] leading-12">
               {service.description}
             </p>
-            <button>
+            <button className="self-end">
               <a
-                href="#"
-                className="flex flex-row w-[10rem] ml-6 justify-center relative top-[50px] text-white hover:text-[rgba(35,42,52,1)] text-[1.5rem] py-1 px-2 rounded-[4px] bg-[rgba(35,42,52,1)] hover:bg-[rgba(157,196,255,1)]"
+                onClick={() => {
+                  window.location.href = `/services#${section}`;
+                }}
+                className="flex flex-row w-[10rem] ml-6 justify-center relative  text-white hover:text-[rgba(35,42,52,1)] text-[1.5rem] py-1 px-2 rounded-[4px] bg-[rgba(35,42,52,1)] hover:bg-[rgba(157,196,255,1)]"
               >
                 More Info
                 <FaArrowRightLong className="ml-[5px] mt-2 p-1" />
