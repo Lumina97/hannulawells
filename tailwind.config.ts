@@ -48,8 +48,11 @@ const config: Config = {
       lineHeight: {
         "12": "3rem",
       },
+      maxWidth: {
+        "1200": "1200",
+      },
       width: {
-        "55": "55%",
+        "55": "54%",
         "13p": "13.333%",
       },
     },

@@ -11,18 +11,22 @@ const About = () => {
     setZoom(zoom);
     if (!zoom) {
       const timer = setTimeout(() => {
-        setShowClickButton(zoom);
+        setShowClickButton(true);
       }, 4000);
       return () => clearTimeout(timer);
-    } else setShowClickButton(zoom);
+    } else setShowClickButton(!zoom);
   };
-
+  console.log("zoom");
+  console.log(zoom);
   return (
     <div className="relative font-raleway flex flex-col items-center justify-center min-h-screen text-white overflow-hidden">
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-transform duration-[4000ms] transition-opacity duration-[4000ms] ${
-          zoom ? "scale-[3] bg-color-black" : ""
-        }`}
+        className={`absolute inset-0 bg-cover bg-center          
+          ${
+            zoom
+              ? "transition-transform duration-[4000ms] transition-opacity duration-[4000ms]"
+              : "transition-transform duration-[1500ms] transition-opacity duration-[1500ms]"
+          }  ${zoom ? "scale-[3] bg-color-black" : ""}`}
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, ${
             zoom ? 0.5 : 0
@@ -34,17 +38,27 @@ const About = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
         <h1
-          className={`absolute text-4xl sm:text-7xl lg:text-9xl cursor-pointer transition duration-[4000ms] ${
-            zoom ? "opacity-0 scale-[100]" : ""
-          }`}
+          className={`absolute text-4xl sm:text-7xl lg:text-9xl cursor-pointer            
+              ${
+                zoom
+                  ? "transition duration-[4000ms]"
+                  : "transition duration-[1500ms]"
+              } 
+            ${zoom ? "opacity-0 scale-[100]" : ""}`}
           onClick={() => handleZoom(true)}
-          style={{ whiteSpace: "nowrap" }}
+          style={{
+            whiteSpace: "nowrap",
+          }}
         >
           Why pe
           <span
-            className={`inline-block transition-transform duration-[4000ms] ${
-              zoom ? "scale-[30]" : ""
-            }`}
+            className={`inline-block
+                      ${
+                        zoom
+                          ? "transition duration-[4000ms]"
+                          : "transition duration-[1500ms]"
+                      } 
+              ${zoom ? "scale-[30]" : ""}`}
           >
             o
           </span>
@@ -52,18 +66,26 @@ const About = () => {
         </h1>
         <div
           className={`absolute translate-y-28 cursor-pointer ${
-            zoom || (!zoom && showClickButton) ? "opacity-0 scale-[100]" : ""
+            zoom || (!zoom && !showClickButton)
+              ? "opacity-0 scale-[100]"
+              : "opacity-1"
           }`}
           onClick={() => handleZoom(true)}
         >
           Click
         </div>
         <div
-          className={`flex flex-col gap-8 transition-all duration-[3000ms] px-4 md:px-[10rem] text-lg md:text-3xl mb-[20%] lg:mb-[15%] xl:mb-[10%] ${
-            zoom
-              ? "transform scale-100 opacity-100 mt-[40%] sm:mt-[20%] lg:mt-[15%] xl:mt-[10%]"
-              : "transform scale-0 opacity-0"
-          }`}
+          className={`flex flex-col gap-8  px-4 md:px-[10rem] text-lg md:text-3xl mb-[20%] lg:mb-[15%] xl:mb-[10%]
+                     ${
+                       zoom
+                         ? "transition-all duration-[3000ms]"
+                         : "transition-all duration-[1000ms]"
+                     } 
+            ${
+              zoom
+                ? "transform scale-100 opacity-100 mt-[40%] sm:mt-[20%] lg:mt-[15%] xl:mt-[10%]"
+                : "transform scale-0 opacity-0"
+            }`}
         >
           <div
             onMouseEnter={() => setIsHovered(true)}
@@ -71,7 +93,7 @@ const About = () => {
             style={{
               color: isHovered ? "#9DC4FF" : "white",
             }}
-            className="cursor-pointer absolute left-[6rem] top-[-1rem] text-8xl"
+            className="cursor-pointer absolute left-[5rem] top-[0rem] text-6xl"
             onClick={() => handleZoom(false)}
           >
             &#8249;

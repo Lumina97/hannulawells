@@ -17,6 +17,7 @@ const Navbar = (props: Props) => {
   const handleQuoteClose = () => setShowQuote(false);
 
   const opacity = Math.min(scrollPosition / 1500, 0.7);
+  const blur = Math.min((scrollPosition / 1500) * 3, 3);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -37,8 +38,9 @@ const Navbar = (props: Props) => {
     <div>
       {/* Desktop Navbar */}
       <motion.nav
-        className={` hidden font-raleway lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4  bg-opacity-60 backdrop-blur-[3px]`}
+        className={` hidden font-raleway lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4  bg-opacity-60 `}
         style={{
+          backdropFilter: `blur(${blur}px)`,
           backgroundColor: `rgba(0,0,0,${opacity})`,
         }}
       >

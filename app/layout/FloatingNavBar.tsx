@@ -38,7 +38,7 @@ const LinksContainer: React.FC<LinksContainerProps> = ({ setActive }) => {
     setActive(false);
   };
   return (
-    <motion.div className="font-raleway space-y-4 p-2 pt-14 flex flex-col items-center gap-5">
+    <motion.div className="font-raleway pb-10 h-full justify-evenly  space-y-4 p-2 pt-14 flex flex-col items-center gap-5">
       {LINKS.map((l, idx) => {
         return (
           <NavLink

@@ -10,7 +10,7 @@ const FooterSection = (props: Props) => {
   return (
     <section className="relative w-full h-auto bg-cover">
       <div className="absolute mt-[-10%] inset-0 flex flex-col items-center justify-center text-white text-center">
-        <motion.div className="mt-10 flex gap-4 relative top-[10%]">
+        <motion.div className="mt-0 md:mt-10 lg:mt10 flex gap-4 relative top-[10%]">
           <Link
             href={"/contact"}
             className={`font-raleway text-[1.2rem]

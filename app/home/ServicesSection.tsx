@@ -100,7 +100,7 @@ const ServicesSection = () => {
             }}
           />
         </div>
-        <ul className="relative justify-items-center grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[8%] my-12">
+        <ul className="relative justify-items-center w-[900px] mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-[22px] my-12">
           {testingData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -132,7 +132,7 @@ const ServicesSection = () => {
             }}
           />{" "}
         </div>
-        <ul className="relative justify-items-center grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[8%] my-12">
+        <ul className="relative justify-items-center w-[900px] mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-[22px] my-12">
           {securityConsultingData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -164,7 +164,7 @@ const ServicesSection = () => {
             }}
           />{" "}
         </div>
-        <ul className="relative justify-items-center grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-12 md:mx-[5%] lg:mx-[8%] my-12">
+        <ul className="relative justify-items-center w-[900px] mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-[22px] my-12">
           {technologySolutionsData.map((service, index) => (
             <ExpandableServiceItem
               key={index}

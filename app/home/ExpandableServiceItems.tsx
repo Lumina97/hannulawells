@@ -40,6 +40,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
     // Cleanup the event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  console.log(isHovered);
 
   return (
     <motion.li
@@ -54,11 +55,12 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
           ? {
               aspectRatio: 1,
               position: "absolute",
-              width: "100%",
+              width: "96%",
               height: "200px",
               display: "flex",
               flexDirection: "row",
               borderColor: "rgba(45,45,45,1)",
+              background: "#13171C",
               zIndex: 10,
               borderRadius: "1rem",
               borderWidth: "1px",
@@ -90,14 +92,16 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
             }
       }
       onClick={() => {
-        if (!isMobile) onClick(section, index);
-        else {
+        if (!isMobile) {
+          onClick(section, index);
+          setIsHovered(false);
+        } else {
           setShowMobileMoreInfo(true);
         }
       }}
       initial={{ width: "100%" }}
       animate={{
-        width: expanded ? "100%" : "200px",
+        width: expanded ? "99%" : "200px",
       }}
       transition={{ duration: 0 }}
       layout
@@ -136,6 +140,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
           style={{ height: "3rem", width: "3rem" }}
         />
         <motion.h2
+          className="px-[1rem]"
           style={{
             fontSize: isMobile ? "1rem" : "1.3rem",
             lineHeight: "2rem",
@@ -186,6 +191,9 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
               </a>
             </button>
           </div>
+          <a className="absolute top-[1rem] text-2xl right-[3rem] hover:text-[rgba(157,196,255,1)]">
+            &#10005;
+          </a>
         </motion.div>
       )}
     </motion.li>
