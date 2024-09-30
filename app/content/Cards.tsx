@@ -3,11 +3,11 @@ import Card from "./Card";
 
 const Cards = () => {
   return (
-    <div className="wrapper flex flex-wrap justify-around w-full max-w-screen-xl mx-auto py-12 gap-8">
+    <div className="wrapper mx-auto flex w-full max-w-screen-xl flex-wrap justify-around gap-8 py-12">
       <Card
         image="/dog.png"
         title="The Pitfalls of Cyber Security Marketing"
-        description={`“It is not a matter of IF; it is a matter of WHEN”\nWe have all heard it. We have used it ourselves to explain security, to help sell a solution, and everything in between. However, this statement has hurt us as an industry. It is taking a very complex situation and dumbing it down into a statement that says, “Yes, we are all screwed.”`}
+        description={`“It is not a matter of IF;\n it is a matter of WHEN”\n\nWe have all heard it. We have used it ourselves to explain security, to help sell a solution, and everything in between. However, this statement has hurt us as an industry. It is taking a very complex situation and dumbing it down into a statement that says, “Yes, we are all screwed.”`}
         author="-HannulaWells"
         link="https://www.linkedin.com/pulse/pitfalls-cyber-security-marketing-matt-hannula/"
       />

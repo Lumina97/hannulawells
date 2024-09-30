@@ -12,9 +12,9 @@ type CardProps = {
 
 const Card = ({ image, title, description, author, link }: CardProps) => {
   return (
-    <div className=" relative card w-full sm:w-96 h-[28rem] rounded-3xl p-2 bg-white relative flex flex-col justify-end transition-transform duration-500 shadow-lg group hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+    <div className="card group relative flex h-[28rem] w-full flex-col justify-end rounded-3xl bg-white p-2 shadow-lg transition-transform duration-500 hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] sm:w-96">
       {/* Background Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full rounded-3xl bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute left-0 top-0 h-full w-full rounded-3xl bg-black bg-opacity-60 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
       {/* Image */}
       <Image
@@ -23,34 +23,34 @@ const Card = ({ image, title, description, author, link }: CardProps) => {
         quality={100}
         src={image}
         alt={title}
-        className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl filter grayscale group-hover:filter-none transition-all duration-500"
+        className="absolute left-0 top-0 h-full w-full rounded-3xl object-cover grayscale filter transition-all duration-500 group-hover:filter-none"
       />
 
       {/* Card Content */}
-      <div className="group cardContent relative z-10 text-white flex flex-col justify-between h-full">
+      <div className="cardContent group relative z-10 flex h-full flex-col justify-between text-white">
         <div className="flex flex-col">
           {/* Title */}
-          <h1 className=" pl-4 pt-4 origin-left pr-20 shadow-custom4 text-1xl sm:text-3xl font-semibold m-0 transition-all duration-500 line-clamp-3 whitespace-pre-line transform group-hover:scale-105">
+          <h1 className="shadow-custom4 text-1xl m-0 line-clamp-3 origin-left transform whitespace-pre-line pl-4 pr-20 pt-4 font-semibold transition-all duration-500 group-hover:scale-105 sm:text-3xl">
             {title}
           </h1>
 
           {/* Info - Initially Hidden, Appears on Hover */}
-          <div className="info flex flex-col justify-center items-center opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-            <p className=" pl-4 pt-4 text-left shadow-custom4 tracking-wide text-base mt-4">
+          <div className="info flex translate-y-4 transform flex-col items-center justify-center opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="shadow-custom4 mt-4 whitespace-pre-wrap pl-4 pt-4 text-left text-base tracking-wide">
               {description}
             </p>
           </div>
         </div>
 
         {/* Author - Fades out on Hover */}
-        <div className="mt-auto flex justify-between w-full absolute bottom-[1rem]">
-          <h2 className=" pl-4 text-lg sm:text-xl font-semibold text-shadow-normal shadow-[black] group-hover:opacity-0 transition-opacity duration-500">
+        <div className="absolute bottom-[1rem] mt-auto flex w-full justify-between">
+          <h2 className="pl-4 text-lg font-semibold shadow-[black] transition-opacity duration-500 text-shadow-normal group-hover:opacity-0 sm:text-xl md:text-2xl">
             {author}
           </h2>
           <a
             href={link}
             target="_blank"
-            className="relative bottom-[-1rem] group-hover:opacity-100 self-end group-hover:translate-y-0 opacity-0 flex flex-rows gap-2 transition-opacity duration-500 items-center self-end pt-2 px-4 outline-none border-none rounded  shadow-custom4 text-white font-bold cursor-pointer hover:text-[#9DC4FF]"
+            className="flex-rows shadow-custom4 relative bottom-[-1rem] flex cursor-pointer items-center gap-2 self-end rounded border-none px-4 pt-2 font-bold text-white opacity-0 outline-none transition-opacity duration-500 hover:text-[#9DC4FF] group-hover:translate-y-0 group-hover:opacity-100"
           >
             Read More &rarr;
           </a>
