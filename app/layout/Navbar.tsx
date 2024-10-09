@@ -16,8 +16,8 @@ const Navbar = (props: Props) => {
   const handleGetQuoteClick = () => setShowQuote(true);
   const handleQuoteClose = () => setShowQuote(false);
 
-  const opacity = Math.min(scrollPosition / 700, 0.8);
-  const blur = Math.min((scrollPosition / 700) * 3, 3);
+  const opacity = Math.min(scrollPosition / 200, 0.8);
+  const blur = Math.min((scrollPosition / 200) * 3, 3);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
