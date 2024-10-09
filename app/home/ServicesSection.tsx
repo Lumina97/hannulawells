@@ -26,7 +26,7 @@ const ServicesSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const currentRef = sectionRef.current;
@@ -60,7 +60,7 @@ const ServicesSection = () => {
   const handleExpand = (
     section: string,
     index: number,
-    serviceRedirect?: string
+    serviceRedirect?: string,
   ) => {
     if (isMobile) {
       window.location.href = `/services${serviceRedirect}`;
@@ -75,32 +75,32 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="our-services" className=" flex flex-col" ref={sectionRef}>
-      <div className="flex flex-col gap-8 items-center mb-12">
-        <h1 className="text-white mt-12 mb-4 text-6xl font-normal">
+    <section id="our-services" className="flex flex-col" ref={sectionRef}>
+      <div className="mb-12 flex flex-col items-center gap-8">
+        <h1 className="mb-4 mt-12 text-5xl font-normal text-white sm:text-6xl md:text-6xl lg:text-6xl">
           Our Services
         </h1>
-        <p className="text-[#8D8D8D] text-2xl text-center">
+        <p className="px-4 text-center text-2xl text-[#8D8D8D] lg:px-0">
           We provide a wide range of services to keep you safe.
         </p>
       </div>
       <div className={`mx-[5%] ${isVisible ? "fade-in" : ""}`}>
-        <div className="flex flex-row gap-4 mx-24 items-center justify-center">
+        <div className="mx-24 flex flex-row items-center justify-center gap-4">
           <hr
-            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            className="my-12 hidden h-px flex-1 border-t-0 bg-[#1B1B1B] sm:block"
             style={{
               boxShadow: "1px 7px 13px 0px #394454",
             }}
           />
-          <span className="text-white text-3xl text-center">Testing</span>
+          <span className="text-center text-3xl text-white">Testing</span>
           <hr
-            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            className="my-12 hidden h-px flex-1 border-t-0 bg-[#1B1B1B] sm:block"
             style={{
               boxShadow: "1px 7px 13px 0px #394454",
             }}
           />
         </div>
-        <ul className="relative justify-items-center md:w-[570px] sm:w-[570px] lg:w-[900px] mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-[22px] my-12">
+        <ul className="relative mx-auto my-12 grid grid-cols-1 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
           {testingData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -115,24 +115,24 @@ const ServicesSection = () => {
             />
           ))}
         </ul>
-        <div className="flex flex-row gap-4 mx-24 items-center justify-center">
+        <div className="mx-24 flex flex-row items-center justify-center gap-4">
           <hr
-            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            className="my-12 hidden h-px flex-1 border-t-0 bg-[#1B1B1B] sm:block"
             style={{
               boxShadow: "1px 7px 13px 0px #394454",
             }}
           />
-          <span className="text-white text-3xl text-center">
+          <span className="text-center text-3xl text-white">
             Security Counseling
           </span>
           <hr
-            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            className="my-12 hidden h-px flex-1 border-t-0 bg-[#1B1B1B] sm:block"
             style={{
               boxShadow: "1px 7px 13px 0px #394454",
             }}
           />
         </div>
-        <ul className="relative justify-items-center md:w-[570px] sm:w-[570px] lg:w-[900px] mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-[22px] my-12">
+        <ul className="relative mx-auto my-12 grid grid-cols-1 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
           {securityConsultingData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -147,24 +147,24 @@ const ServicesSection = () => {
             />
           ))}
         </ul>
-        <div className="flex flex-row gap-4 mx-24 items-center justify-center">
+        <div className="mx-24 flex flex-row items-center justify-center gap-4">
           <hr
-            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            className="my-12 hidden h-px flex-1 border-t-0 bg-[#1B1B1B] sm:block"
             style={{
               boxShadow: "1px 7px 13px 0px #394454",
             }}
           />{" "}
-          <span className="text-white text-3xl text-center">
+          <span className="text-center text-3xl text-white">
             Technology Solutions
           </span>
           <hr
-            className="hidden sm:block flex-1 my-12 h-px bg-[#1B1B1B] border-t-0"
+            className="my-12 hidden h-px flex-1 border-t-0 bg-[#1B1B1B] sm:block"
             style={{
               boxShadow: "1px 7px 13px 0px #394454",
             }}
           />{" "}
         </div>
-        <ul className="relative justify-items-center md:w-[570px] sm:w-[570px] lg:w-[900px] mx-auto grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-[22px] my-12">
+        <ul className="relative mx-auto my-12 grid grid-cols-1 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
           {technologySolutionsData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -183,7 +183,7 @@ const ServicesSection = () => {
       <button className="my-20">
         <Link
           href="/services"
-          className="text-[#B5B5B5] text-2xl py-4 px-8 border-2 bg-transparent border-[rgb(45,45,45,1)] rounded-lg hover:bg-[#232A34] hover:border-[#29323d] hover:text-white transition duration-700"
+          className="rounded-lg border-2 border-[rgb(45,45,45,1)] bg-transparent px-8 py-4 text-2xl text-[#B5B5B5] transition duration-700 hover:border-[#29323d] hover:bg-[#232A34] hover:text-white"
         >
           More Info
         </Link>

@@ -4,10 +4,16 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
-import HeaderNavbar from "./layout/HeaderNavBar";
+import { Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import ScrollToTop from "../lib/scrollToTop";
 const inter = Inter({ subsets: ["latin"] });
+
+export const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-raleway",
+});
 
 export const metadata: Metadata = {
   title: "HannulaWells",
@@ -18,11 +24,11 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className="bg-black">
+      <body className={`bg-black ${raleway.variable}`}>
         <ScrollToTop />
         <Navbar />
         <main className="flex-1">{children}</main>
-        <hr className="flex-1 mt-12 h-px bg-[#2D2D2D] border-t-0" />
+        <hr className="mt-12 h-px flex-1 border-t-0 bg-[#2D2D2D]" />
         <Footer />
         <Analytics />
       </body>

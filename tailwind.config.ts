@@ -34,7 +34,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        raleway: ["Raleway", "sans-serif"],
+        raleway: ["var(--font-raleway)"],
       },
       borderRadius: {
         "4xl": "2rem",
@@ -52,7 +52,7 @@ const config: Config = {
         "1200": "1200",
       },
       width: {
-        "55": "54%",
+        "55": "53.7%",
         "13p": "13.333%",
       },
     },
@@ -67,7 +67,7 @@ const config: Config = {
             textShadow: value,
           }),
         },
-        { values: theme("textShadow") }
+        { values: theme("textShadow") },
       );
     }),
   ],

@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
 html {
   background-color: black;
 }
@@ -43,14 +42,21 @@ body {
 .shadow-custom {
   text-shadow: 2px 2px 2px rgb(0 0 0 / var(--tw-text-opacity));
 }
+.shadow-custom2 {
+  text-shadow:
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity));
+}
 
 .shadow-custom4 {
-  text-shadow: 0px 0px 10px rgb(0 0 0 / var(--tw-text-opacity)),
+  text-shadow:
+    0px 0px 10px rgb(0 0 0 / var(--tw-text-opacity)),
     0px 0px 10px rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .shadow-custom5 {
-  text-shadow: 0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
+  text-shadow:
+    0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
     0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
     0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
     0px 0px 15px rgb(0 0 0 / var(--tw-text-opacity)),
@@ -86,7 +92,8 @@ body {
       rgba(3, 3, 3, 0.8) 6.27%,
       rgba(35, 42, 52, 0.8) 93.58%
     );
-    box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25),
+    box-shadow:
+      2px 2px 30px 0px rgba(0, 0, 0, 0.25),
       0px 0px 2px 2px rgba(255, 255, 255, 0.1) inset;
     backdrop-filter: blur(60px);
   }
@@ -98,7 +105,8 @@ body {
       rgba(35, 42, 52, 0.8) 0.11%,
       rgba(3, 3, 3, 0.8) 96.48%
     );
-    box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.25),
+    box-shadow:
+      2px 2px 30px 0px rgba(0, 0, 0, 0.25),
       0px 0px 2px 2px rgba(255, 255, 255, 0.1) inset;
     backdrop-filter: blur(60px);
   }
@@ -113,7 +121,7 @@ body {
 
   .bg-custom-to-bottom-left {
     background: radial-gradient(
-      51.97% 50.57% at top right,
+      99% 99% at top right,
       #232a34 20%,
       #000000 100%
     );
@@ -141,7 +149,8 @@ body {
       rgba(255, 255, 255, 0) 90%,
       rgba(144, 144, 144, 1)
     );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
@@ -175,7 +184,8 @@ body {
       rgba(255, 255, 255, 0.6) 100%,
       rgba(194, 194, 194, 0.5)
     );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
@@ -209,7 +219,8 @@ body {
       rgba(255, 255, 255, 0.6) 100%,
       rgba(194, 194, 194, 0.5)
     );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;

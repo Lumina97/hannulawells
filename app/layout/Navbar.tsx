@@ -16,8 +16,8 @@ const Navbar = (props: Props) => {
   const handleGetQuoteClick = () => setShowQuote(true);
   const handleQuoteClose = () => setShowQuote(false);
 
-  const opacity = Math.min(scrollPosition / 1500, 0.7);
-  const blur = Math.min((scrollPosition / 1500) * 3, 3);
+  const opacity = Math.min(scrollPosition / 700, 0.8);
+  const blur = Math.min((scrollPosition / 700) * 3, 3);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -38,7 +38,7 @@ const Navbar = (props: Props) => {
     <div>
       {/* Desktop Navbar */}
       <motion.nav
-        className={` hidden font-raleway lg:flex z-50 fixed top-0 left-0 right-0 justify-between text-white p-4  bg-opacity-60 `}
+        className={`fixed left-0 right-0 top-0 z-50 hidden justify-between bg-opacity-60 p-4 font-raleway text-white lg:flex`}
         style={{
           backdropFilter: `blur(${blur}px)`,
           backgroundColor: `rgba(0,0,0,${opacity})`,
@@ -46,7 +46,7 @@ const Navbar = (props: Props) => {
       >
         <Link
           href={"/"}
-          className="group cursor-pointer flex items-center relative"
+          className="group relative flex cursor-pointer items-center"
         >
           <div className="relative flex items-center">
             <Image
@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
             <Image
               src="/bluewnavbar.svg"
               alt="HannulaWells navigation bar blue logo."
-              className="absolute top-0 left-0 transition-transform duration-500 transform scale-0 group-hover:scale-100"
+              className="absolute left-0 top-0 scale-0 transform transition-transform duration-500 group-hover:scale-100"
               width={75}
               height={65}
             />
@@ -66,20 +66,20 @@ const Navbar = (props: Props) => {
           <Image
             src="/hannulawellsnavbar.svg"
             alt="HannulaWells navigation bar company name."
-            className="transition transform group-hover:scale-[1.05] group-hover:drop-shadow-md ml-2 mt-[10px]"
+            className="ml-2 mt-[10px] transform transition group-hover:scale-[1.05] group-hover:drop-shadow-md"
             width={250}
             height={65}
           />
         </Link>
-        <div className="flex w-55 justify-between items-center text-xl">
+        <div className="flex w-55 items-center justify-between text-xl">
           {["services", "content", "about", "contact"].map((item) => (
-            <div key={item} className="w-13p relative group text-center">
+            <div key={item} className="group relative w-13p text-center">
               <Link href={`/${item}`} className="relative inline-block">
                 <span
-                  className={`transition-transform duration-300 transform group-hover:scale-110 block hover:font-bold ${
+                  className={`block transform transition-transform duration-300 hover:font-bold group-hover:scale-110 ${
                     pathname === `/${item}`
-                      ? "font-bold scale-110"
-                      : "font-normal scale-100"
+                      ? "scale-110 font-bold"
+                      : "scale-100 font-normal"
                   }`}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
@@ -88,24 +88,14 @@ const Navbar = (props: Props) => {
             </div>
           ))}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+            className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
             <button
               onClick={handleGetQuoteClick}
-              className={`
-                                relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] 
-                                border-white px-4 py-2 font-semibold text-white transition-all duration-500
-                                before:absolute before:inset-0 before:-z-10 before:translate-x-[0%]
-                                before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3]
-                                before:rounded-[100%] before:bg-white before:transition-transform before:duration-500
-                                before:content-[""] shadow-md
-                                hover:text-neutral-900 hover:font-semibold hover:before:bg-[rgba(157,196,255,0.8)]
-                                hover:border-[rgba(157,196,255,0.8)] hover:shadow-[0_0_20px_rgba(157,196,255,0.8)]
-                                hover:before:translate-x-[0%] hover:before:translate-y-[0%]
-                            `}
+              className={`relative z-0 flex items-center gap-2 overflow-hidden rounded-lg border-[1px] border-white px-4 py-2 font-semibold text-white shadow-md transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[0%] before:translate-y-[200%] before:scale-x-[1.1] before:scale-y-[3] before:rounded-[100%] before:bg-white before:transition-transform before:duration-500 before:content-[""] hover:border-[rgba(157,196,255,0.8)] hover:font-semibold hover:text-neutral-900 hover:shadow-[0_0_20px_rgba(157,196,255,0.8)] hover:before:translate-x-[0%] hover:before:translate-y-[0%] hover:before:bg-[rgba(157,196,255,0.8)]`}
             >
               <span>GET A QUOTE</span>
             </button>

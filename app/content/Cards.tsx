@@ -13,7 +13,7 @@ const Cards = () => {
       />
       <Card
         image="/tablet.png"
-        title="Eliminating the Risk of Shadow SaaS"
+        title={`Eliminating the\nRisk of Shadow\nSaaS`}
         description="SaaS applications are dominating the corporate landscape. Their increased use enables organizations to push the boundaries of technology and business. At the same time, these applications also pose a new security risk that security leaders need to address, since the existing security stack does not enable complete control or comprehensive monitoring of their usage..."
         author="-The Hacker News"
         link="https://thehackernews.com/2024/05/new-guide-explains-how-to-eliminate.html"
