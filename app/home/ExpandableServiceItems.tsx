@@ -49,7 +49,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
         setShowMobileMoreInfo(false);
         setIsHovered(false);
       }}
-      className="aspect-square service-gradient-bg hover:bg-[#232A34] hover:shadow-[0_0_30px_0_rgba(157,196,255,0.30)] cursor-pointer font-raleway"
+      className="service-gradient-bg aspect-square cursor-pointer font-raleway hover:bg-[#232A34] hover:shadow-[0_0_30px_0_rgba(157,196,255,0.30)]"
       style={
         expanded
           ? {
@@ -79,11 +79,9 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
               display: "flex",
               flexDirection: "row",
               padding: "1rem",
-              maxHeight: "200px",
+              maxHeight: `${isMobile ? "150px" : "200px"}`,
               height: "100%",
-              width: "100%",
-              minHeight: isMobile ? "9rem" : "200px",
-              minWidth: isMobile ? "9rem" : "200px",
+              width: `${isMobile ? "150px" : "100%"}`,
               borderColor: "rgba(45,45,45,1)",
               backgroundColor: isHovered ? "#232A34" : "service-gradient-bg",
               boxShadow: isHovered
@@ -101,19 +99,19 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
       }}
       initial={{ width: "100%" }}
       animate={{
-        width: expanded ? "99%" : "200px",
+        width: expanded ? "99%" : `${isMobile ? "150px" : "200px"}`,
       }}
       transition={{ duration: 0 }}
       layout
     >
       {/*mobile blurred background*/}
       {showMobileMoreInfo && (
-        <div className="absolute text-white backdrop-blur rounded-2xl ">
+        <div className="absolute rounded-2xl text-white backdrop-blur">
           <a
             onClick={() => {
               onClick(section, index, `#${section}`);
             }}
-            className="flex gap-[0.5rem] justify-center items-center w-[200px] h-[200px]"
+            className="flex h-[200px] w-[200px] items-center justify-center gap-[0.5rem]"
           >
             More Info
             <Image
@@ -137,15 +135,18 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
         <motion.img
           src={service.img}
           alt={service.title}
-          style={{ height: "3rem", width: "3rem" }}
+          style={{
+            height: isMobile ? "2rem" : "3rem",
+            width: isMobile ? "2rem" : "3rem",
+          }}
         />
         <motion.h2
           className="px-[1rem]"
           style={{
             fontSize: isMobile ? "1rem" : "1.3rem",
             lineHeight: "2rem",
-            marginTop: ".5rem",
-            marginBottom: ".5rem",
+            marginTop: isMobile ? "0rem" : ".5rem",
+            marginBottom: isMobile ? "0rem" : ".5rem",
             background: "none",
             color: "white",
             width: isMobile ? "9rem" : "12rem",
@@ -175,7 +176,7 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
               borderTop: "none",
             }}
           />
-          <div className="flex ">
+          <div className="flex">
             <p className="line-clamp-3 text-[1.25rem] leading-12">
               {service.description}
             </p>
@@ -184,14 +185,14 @@ const ExpandableServiceItem: React.FC<ServiceItemProps> = ({
                 onClick={() => {
                   window.location.href = `/services#${section}`;
                 }}
-                className="flex flex-row w-[10rem] ml-6 justify-center relative  text-white hover:text-[rgba(35,42,52,1)] text-[1.5rem] py-1 px-2 rounded-[4px] bg-[rgba(35,42,52,1)] hover:bg-[rgba(157,196,255,1)]"
+                className="relative ml-6 flex w-[10rem] flex-row justify-center rounded-[4px] bg-[rgba(35,42,52,1)] px-2 py-1 text-[1.5rem] text-white hover:bg-[rgba(157,196,255,1)] hover:text-[rgba(35,42,52,1)]"
               >
                 More Info
                 <FaArrowRightLong className="ml-[5px] mt-2 p-1" />
               </a>
             </button>
           </div>
-          <a className="absolute top-[1rem] text-2xl right-[3rem] hover:text-[rgba(157,196,255,1)]">
+          <a className="absolute right-[3rem] top-[1rem] text-2xl hover:text-[rgba(157,196,255,1)]">
             &#10005;
           </a>
         </motion.div>

@@ -64,7 +64,7 @@ const HackersNeverStop = () => {
         height={5000}
         quality={100}
         alt="hacker statistics by hannulawells"
-        className={`absolute right-[0%] top-[15%] w-[25%] sm:top-[15%] sm:w-[32%] md:top-[4%] lg:right-[4.5%] lg:top-[3%] ${
+        className={`absolute right-[0%] top-[4%] w-[32%] sm:top-[4%] sm:w-[32%] md:top-[4%] lg:right-[4.5%] lg:top-[3%] lg:w-[25%] ${
           isVisible ? "fade-from-right" : ""
         }`}
       />

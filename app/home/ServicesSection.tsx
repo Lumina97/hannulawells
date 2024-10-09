@@ -100,7 +100,7 @@ const ServicesSection = () => {
             }}
           />
         </div>
-        <ul className="relative mx-auto my-12 grid grid-cols-1 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
+        <ul className="relative mx-auto my-12 grid grid-cols-2 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
           {testingData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -132,7 +132,7 @@ const ServicesSection = () => {
             }}
           />
         </div>
-        <ul className="relative mx-auto my-12 grid grid-cols-1 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
+        <ul className="relative mx-auto my-12 grid grid-cols-2 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
           {securityConsultingData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
@@ -164,7 +164,7 @@ const ServicesSection = () => {
             }}
           />{" "}
         </div>
-        <ul className="relative mx-auto my-12 grid grid-cols-1 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
+        <ul className="relative mx-auto my-12 grid grid-cols-2 justify-items-center gap-[22px] sm:w-[570px] sm:grid-cols-2 md:w-[570px] lg:w-[900px] lg:grid-cols-4">
           {technologySolutionsData.map((service, index) => (
             <ExpandableServiceItem
               key={index}
