@@ -86,7 +86,7 @@ const About = () => {
             style={{
               color: isHovered ? "#9DC4FF" : "white",
             }}
-            className="absolute left-[5rem] top-[-5rem] cursor-pointer text-6xl sm:top-[-5rem] md:top-[-5rem] lg:top-[0rem]"
+            className="absolute left-[1rem] top-[-5rem] cursor-pointer text-6xl sm:top-[-5rem] md:left-[5rem] md:top-[-0rem] lg:top-[0rem]"
             onClick={() => handleZoom(false)}
           >
             &#8249;

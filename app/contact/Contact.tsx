@@ -14,7 +14,7 @@ const Contact = (_props: Props) => {
   return (
     <div className="relative flex min-h-screen items-center justify-center p-4 font-raleway text-white">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-left"
         style={{ backgroundImage: "url('/working.svg')" }}
       >
         <div className="absolute inset-x-0 top-0 h-1/6 bg-gradient-to-b from-black to-transparent"></div>
@@ -22,25 +22,25 @@ const Contact = (_props: Props) => {
       </div>
       <div className="relative mx-auto my-20 flex w-full flex-col lg:flex-1 lg:flex-row lg:items-center lg:justify-between lg:p-4">
         <div className="relative mb-10 flex w-full flex-col p-[5%] lg:absolute lg:bottom-0 lg:left-0 lg:mb-0 lg:ml-[5%] lg:w-[45%] lg:p-4">
-          <div className="flex w-[70%] transform gap-[1rem] overflow-hidden transition">
+          <div className="flex w-[100%] transform gap-[1rem] overflow-hidden transition">
             <Image
               width={200}
               height={200}
               src="/Phone-us.svg"
               alt="Contact phone number"
-              className="w-[25%] self-center pt-[3%]"
+              className="w-[25%] max-w-[70px] self-center pt-[3%] md:max-w-[100px] lg:max-w-[70px]"
             />
-            <h2 className="normal shadow-custom2 self-center whitespace-pre-wrap font-raleway text-4xl font-medium">{`Phone:\n(805) 305-8773`}</h2>
+            <h2 className="normal shadow-custom2 self-center whitespace-pre-wrap font-raleway text-lg font-semibold md:py-6 md:text-5xl lg:text-3xl">{`Phone:\n(805) 305-8773`}</h2>
           </div>
-          <div className="flex w-[70%] transform gap-[1rem] transition">
+          <div className="flex w-[100%] transform gap-[1rem] transition">
             <Image
               width={200}
               height={200}
               src="/email-us.svg"
               alt="Contact email address"
-              className="w-[25%] pt-[3%]"
+              className="w-[25%] max-w-[70px] pt-[3%] md:max-w-[100px] lg:max-w-[70px]"
             />
-            <h2 className="shadow-custom2 self-center whitespace-pre-wrap font-raleway text-4xl font-medium">{`Email\ninfo@hannulawells.com`}</h2>
+            <h2 className="shadow-custom2 font-1xl self-center whitespace-pre-wrap font-raleway text-lg font-semibold md:text-5xl lg:text-3xl">{`Email\ninfo@hannulawells.com`}</h2>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-center md:p-8 lg:justify-end lg:p-4">
@@ -48,7 +48,7 @@ const Contact = (_props: Props) => {
             <>
               <form
                 ref={formRef}
-                className="flex w-full flex-col items-center rounded-2xl bg-[#2A2C30] bg-opacity-80 p-6 text-black opacity-80 shadow-lg md:p-8 lg:w-[50%] lg:p-4"
+                className="flex w-full flex-col items-center rounded-2xl bg-[#2A2C30] bg-opacity-95 p-6 text-black shadow-lg backdrop-blur-[5px] md:p-8 lg:w-[50%] lg:p-4"
                 action={async (formData) => {
                   const { data, error } = await sendEmail(formData);
 
